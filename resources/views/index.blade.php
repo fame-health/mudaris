@@ -321,7 +321,7 @@
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="alternate" type="application/rss+xml" title="Mudaris Mandiri Wisata RSS Feed" href="/feed.xml">
 
- 
+
 <!-- Font Awesome 6 (Latest) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
@@ -443,7 +443,7 @@
 
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 overflow-x-hidden">ty
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
 
   <!-- Navbar -->
   <nav class="glass-morphism fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
