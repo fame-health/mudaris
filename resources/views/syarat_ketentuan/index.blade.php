@@ -10,7 +10,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Primary Meta Tags -->
-  <title>Syarat dan Ketentuan | Mudaris Mandiri Wisata</title>
+  <title>Syarat dan Ketentuan - Mudaris Mandiri Wisata</title>
   <meta name="title" content="Syarat dan Ketentuan | Mudaris Mandiri Wisata">
   <meta name="description" content="Pelajari syarat dan ketentuan layanan umroh dari Mudaris Mandiri Wisata untuk memastikan perjalanan ibadah Anda berjalan lancar.">
   <meta name="keywords" content="syarat umroh, ketentuan umroh, travel umroh, Mudaris Mandiri Wisata, biaya umroh, pendaftaran umroh, kebijakan pembatalan umroh">

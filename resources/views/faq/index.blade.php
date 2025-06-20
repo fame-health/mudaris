@@ -12,8 +12,8 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Primary Meta Tags -->
-  <title>FAQ - Pertanyaan yang Sering Diajukan | Mudaris Mandiri Wisata</title>
-  <meta name="title" content="FAQ - Pertanyaan yang Sering Diajukan | Mudaris Mandiri Wisata">
+  <title>FAQ - Mudaris Mandiri Wisata</title>
+  <meta name="title" content="FAQ - Mudaris Mandiri Wisata">
   <meta name="description" content="Temukan jawaban untuk pertanyaan umum seputar paket umroh Mudaris Mandiri Wisata, termasuk syarat, biaya, dan prosedur keberangkatan umroh.">
   <meta name="keywords" content="FAQ umroh, pertanyaan umroh, syarat umroh, biaya umroh, prosedur umroh, Mudaris Mandiri Wisata">
   <meta name="author" content="Mudaris Mandiri Wisata">

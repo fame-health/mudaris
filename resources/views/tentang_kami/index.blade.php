@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- Primary Meta Tags -->
-  <title>Tentang Kami | Mudaris Mandiri Wisata</title>
+  <title>Tentang Kami - Mudaris Mandiri Wisata</title>
   <meta name="title" content="Tentang Kami | Mudaris Mandiri Wisata">
   <meta name="description" content="Ketahui lebih lanjut tentang Mudaris Mandiri Wisata, travel umroh terpercaya sejak 2008. Kami menawarkan pelayanan amanah dengan izin resmi Kemenag RI.">
   <meta name="keywords" content="tentang kami, travel umroh, umroh terpercaya, Mudaris Mandiri Wisata, izin resmi umroh, pelayanan umroh, sejarah travel umroh">

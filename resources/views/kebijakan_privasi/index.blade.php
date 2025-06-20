@@ -11,7 +11,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Primary Meta Tags -->
-  <title>Kebijakan Privasi | Mudaris Mandiri Wisata</title>
+  <title>Kebijakan Privasi - Mudaris Mandiri Wisata</title>
   <meta name="title" content="Kebijakan Privasi | Mudaris Mandiri Wisata">
   <meta name="description" content="Pelajari bagaimana Mudaris Mandiri Wisata melindungi privasi dan keamanan data pribadi Anda dengan kebijakan privasi kami yang transparan.">
   <meta name="keywords" content="kebijakan privasi, privasi umroh, perlindungan data, Mudaris Mandiri Wisata">

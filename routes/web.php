@@ -3,12 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\TestimonialController;
+use App\Models\PageVisitor;
 use Artesaos\SEOTools\Facades\SEOTools;
 
 Route::get('/', [TestimonialController::class, 'homepage'])->name('home');
 
 // FAQ
 Route::get('/faq', function () {
+    PageVisitor::incrementVisit('FAQ Page');
+
     SEOTools::setTitle('FAQ - Mudaris Mandiri Wisata', false);
     SEOTools::setDescription('Temukan jawaban atas pertanyaan umum tentang paket umroh kami di Mudaris Mandiri Wisata. Informasi lengkap untuk perjalanan ibadah Anda.');
     SEOTools::opengraph()->setUrl('https://mudarismandiriwisata.com/faq');
@@ -25,6 +28,8 @@ Route::get('/faq', function () {
 
 // Kebijakan Privasi
 Route::get('/kebijakan-privasi', function () {
+    PageVisitor::incrementVisit('Kebijakan Privasi');
+
     SEOTools::setTitle('Kebijakan Privasi - Mudaris Mandiri Wisata', false);
     SEOTools::setDescription('Baca kebijakan privasi Mudaris Mandiri Wisata untuk memahami bagaimana kami melindungi data pribadi Anda selama proses pendaftaran umroh.');
     SEOTools::opengraph()->setUrl('https://mudarismandiriwisata.com/kebijakan-privasi');
@@ -41,6 +46,8 @@ Route::get('/kebijakan-privasi', function () {
 
 // Syarat & Ketentuan
 Route::get('/syarat-ketentuan', function () {
+    PageVisitor::incrementVisit('Syarat & Ketentuan');
+
     SEOTools::setTitle('Syarat & Ketentuan - Mudaris Mandiri Wisata', false);
     SEOTools::setDescription('Pelajari syarat dan ketentuan layanan umroh dari Mudaris Mandiri Wisata untuk memastikan perjalanan ibadah Anda berjalan lancar.');
     SEOTools::opengraph()->setUrl('https://mudarismandiriwisata.com/syarat-ketentuan');
@@ -57,6 +64,8 @@ Route::get('/syarat-ketentuan', function () {
 
 // Tentang Kami
 Route::get('/tentang-kami', function () {
+    PageVisitor::incrementVisit('Tentang Kami');
+
     SEOTools::setTitle('Tentang Kami - Mudaris Mandiri Wisata', false);
     SEOTools::setDescription('Ketahui lebih lanjut tentang Mudaris Mandiri Wisata, agen umroh terpercaya dengan pengalaman lebih dari 15 tahun melayani jamaah.');
     SEOTools::opengraph()->setUrl('https://mudarismandiriwisata.com/tentang-kami');
