@@ -6,7 +6,7 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ContactController 
+class ContactController
 {
     /**
      * Display a listing of the resource.

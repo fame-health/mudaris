@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Testimonial;
+use App\Models\PageVisitor; // Tambahkan use untuk PageVisitor
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +17,15 @@ class TestimonialController
     public function homepage()
     {
         try {
+            // Tambahkan pelacakan kunjungan untuk halaman Homepage
+            Log::info('Mencoba mencatat kunjungan untuk Homepage');
+            $visitor = PageVisitor::incrementVisit('Homepage');
+            if ($visitor) {
+                Log::info('Kunjungan untuk Homepage berhasil dicatat, count: ' . $visitor->visit_count);
+            } else {
+                Log::warning('Gagal mencatat kunjungan untuk Homepage');
+            }
+
             // Debug: Cek koneksi database
             Log::info('=== TESTIMONIAL DEBUG START ===');
 
