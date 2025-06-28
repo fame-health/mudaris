@@ -19,6 +19,7 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://mudarismandiriwisata.com/">
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
