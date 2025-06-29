@@ -29,7 +29,7 @@
     <meta property="og:title" content="Mudaris Mandiri Wisata - Paket Umroh Terpercaya & Amanah | 15+ Tahun Pengalaman">
     <meta property="og:description"
         content="Wujudkan impian ibadah umroh Anda bersama Mudaris Mandiri Wisata. 500+ jamaah puas, pelayanan terpercaya, amanah dan penuh berkah. Konsultasi gratis sekarang!">
-    <meta property="og:image" content="https://mudarismandiriwisata.com/images/og-image-mudaris-mandiri-wisata.jpg">
+    <meta property="og:image" content="https://mudarismandiriwisata.com/assets/images/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Mudaris Mandiri Wisata - Paket Umroh Terpercaya">
@@ -44,7 +44,7 @@
     <meta name="twitter:description"
         content="Wujudkan impian ibadah umroh Anda bersama Mudaris Mandiri Wisata. 500+ jamaah puas, pelayanan terpercaya, amanah dan penuh berkah.">
     <meta name="twitter:image"
-        content="https://mudarismandiriwisata.com/images/twitter-card-mudaris-mandiri-wisata.jpg">
+        content="https://mudarismandiriwisata.com/assets/images/logo.png">
     <meta name="twitter:image:alt" content="Mudaris Mandiri Wisata - Paket Umroh Terpercaya">
 
     <!-- Additional Social Media Meta -->
