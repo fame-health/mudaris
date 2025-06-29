@@ -23,7 +23,6 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://mudarismandiriwisata.com/">
 
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mudaris Mandiri Wisata">
@@ -61,15 +60,27 @@
     <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('android-chrome-512x512.png') }}">
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
-    <!-- Manifest for PWA -->
+    <!-- Manifest for PWA (Updated) -->
     <meta name="theme-color" content="#f59e0b">
     <meta name="msapplication-TileColor" content="#f59e0b">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}" crossorigin="use-credentials">
+    <meta name="start_url" content="/?utm_source=pwa">
+    <meta name="display" content="standalone">
 
     <!-- DNS Prefetch & Preconnect -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="{{ asset('assets/images/logo.png') }}" as="image">
+
+    <!-- Prefetch for Key Pages -->
+    <link rel="prefetch" href="https://mudarismandiriwisata.com/paket" as="document">
+    <link rel="prefetch" href="https://mudarismandiriwisata.com/kontak" as="document">
 
     <!-- Security Headers - Enhanced CSP -->
     <meta http-equiv="Content-Security-Policy"
@@ -173,6 +184,34 @@
       "@type": "Person",
       "name": "Founder Mudaris Mandiri Wisata"
     }
+  }
+  </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://mudarismandiriwisata.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Paket Umroh",
+        "item": "https://mudarismandiriwisata.com/paket"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Kontak",
+        "item": "https://mudarismandiriwisata.com/kontak"
+      }
+    ]
   }
   </script>
 
@@ -294,10 +333,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXXX');
     </script>
@@ -306,45 +342,26 @@
     <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
+            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
             var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
             j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');
     </script>
 
     <!-- Facebook Pixel (Placeholder for Pixel ID) -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = true;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID'); fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
+            src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -353,154 +370,38 @@
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="alternate" type="application/rss+xml" title="Mudaris Mandiri Wisata RSS Feed" href="/feed.xml">
 
+    <!-- Optional AMP Link (Remove if not needed) -->
+    <link rel="amphtml" href="https://mudarismandiriwisata.com/amp/">
 
     <!-- Font Awesome 6 (Latest) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Inline CSS (Existing Styles) -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Warna utama biru (gradient identik biru) */
-        .gradient-bg {
-            background: linear-gradient(135deg, #0052CC 0%, #0ea5e9 50%, #6366f1 100%);
-        }
-
-        /* Hero section biru muda */
-        .hero-gradient {
-            background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 50%, #60a5fa 100%);
-        }
-
-        /* Hover effect card */
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Floating animation */
-        .floating-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* Fade-in animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Glassmorphism effect */
-        .glass-morphism {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-
-        /* Text shadow ringan */
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Blob morphing effect */
-        .blob {
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            animation: blob 7s ease-in-out infinite;
-        }
-
-        @keyframes blob {
-
-            0%,
-            100% {
-                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            }
-
-            25% {
-                border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
-            }
-
-            50% {
-                border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
-            }
-
-            75% {
-                border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
-            }
-        }
-
-        /* Mobile menu animation */
-        #mobile-menu {
-            transition: all 0.3s ease;
-            max-height: 0;
-            overflow: hidden;
-        }
-
-        #mobile-menu.active {
-            max-height: 500px;
-        }
-
-        /* Icon rotation for mobile */
-        .mobile-menu-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .mobile-menu-icon.active {
-            transform: rotate(90deg);
-        }
-
-        /* Keyframe untuk transisi masuk & keluar */
-        @keyframes slideShow {
-
-            0%,
-            33.33%,
-            100% {
-                opacity: 0;
-            }
-
-            10%,
-            23.33% {
-                opacity: 1;
-            }
-        }
-
-        /* Animasi dengan delay untuk masing-masing slide */
-        .absolute.inset-0.bg-cover:nth-child(2) {
-            animation: slideShow 12s infinite;
-        }
-
-        .absolute.inset-0.bg-cover:nth-child(3) {
-            animation: slideShow 12s infinite;
-            animation-delay: 4s;
-        }
-
-        .absolute.inset-0.bg-cover:nth-child(4) {
-            animation: slideShow 12s infinite;
-            animation-delay: 8s;
-        }
+        * { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #0052CC 0%, #0ea5e9 50%, #6366f1 100%); }
+        .hero-gradient { background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 50%, #60a5fa 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .floating-animation { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .glass-morphism { background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.18); }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); }
+        .blob { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; animation: blob 7s ease-in-out infinite; }
+        @keyframes blob { 0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; } 25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; } 50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; } 75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; } }
+        #mobile-menu { transition: all 0.3s ease; max-height: 0; overflow: hidden; }
+        #mobile-menu.active { max-height: 500px; }
+        .mobile-menu-icon { transition: transform 0.3s ease; }
+        .mobile-menu-icon.active { transform: rotate(90deg); }
+        @keyframes slideShow { 0%, 33.33%, 100% { opacity: 0; } 10%, 23.33% { opacity: 1; } }
+        .absolute.inset-0.bg-cover:nth-child(2) { animation: slideShow 12s infinite; }
+        .absolute.inset-0.bg-cover:nth-child(3) { animation: slideShow 12s infinite; animation-delay: 4s; }
+        .absolute.inset-0.bg-cover:nth-child(4) { animation: slideShow 12s infinite; animation-delay: 8s; }
     </style>
 </head>
 
@@ -1438,7 +1339,7 @@ function loadInstagramPost(element, postId) {
                     </div>
                 </div>
     </section>
-    
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
