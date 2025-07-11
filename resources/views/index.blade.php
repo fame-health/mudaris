@@ -1153,6 +1153,131 @@ function loadInstagramPost(element, postId) {
         </div>
     </section>
 
+<section id="partners" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+                Mitra Bisnis Kami
+            </h2>
+            <p class="text-xl text-gray-600">Kami bekerja sama dengan mitra terpercaya untuk memberikan layanan terbaik</p>
+        </div>
+
+        @php
+            $partners = \App\Models\Partner::active()->get();
+        @endphp
+
+        <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            @forelse ($partners as $index => $partner)
+                <div class="fade-in flex justify-center">
+                    <div class="partner-logo cursor-pointer" data-partner="partner{{ $index + 1 }}">
+                        <img src="{{ Storage::url($partner->logo_gray) }}"
+                             alt="{{ $partner->name }}"
+                             class="w-32 h-32 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                             data-gray="{{ Storage::url($partner->logo_gray) }}"
+                             data-color="{{ Storage::url($partner->logo_color) }}">
+                    </div>
+                </div>
+            @empty
+                <div class="col-span-full text-center text-gray-600">
+                    Tidak ada mitra bisnis yang tersedia saat ini.
+                </div>
+            @endforelse
+        </section>
+
+        <!-- Modal -->
+        <div id="partnerModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-3xl shadow-xl p-8 max-w-lg w-full mx-4">
+                <h3 id="partnerName" class="text-2xl font-bold text-gray-800 mb-4">Partner Name</h3>
+                <p id="partnerDescription" class="text-gray-600 mb-6">Partner description goes here.</p>
+                <button id="closeModal" class="gradient-bg text-white py-2 px-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to right, #f59e0b, #f97316);
+        }
+        .partner-logo img.grayscale {
+            filter: grayscale(100%);
+        }
+        .partner-logo img.active {
+            filter: grayscale(0);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <script>
+        const partnerData = {
+            @foreach ($partners as $index => $partner)
+                'partner{{ $index + 1 }}': {
+                    name: @json($partner->name),
+                    description: @json($partner->description)
+                }{{ !$loop->last ? ',' : '' }}
+            @endforeach
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const partners = document.querySelectorAll('.fade-in');
+            partners.forEach((partner, index) => {
+                partner.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            document.querySelectorAll('.partner-logo').forEach(logo => {
+                logo.addEventListener('click', function() {
+                    const partnerId = this.dataset.partner;
+                    const partner = partnerData[partnerId];
+                    const img = this.querySelector('img');
+
+                    if (!partner) return;
+
+                    const isActive = img.classList.contains('active');
+                    document.querySelectorAll('.partner-logo img').forEach(otherImg => {
+                        otherImg.classList.remove('active');
+                        otherImg.src = otherImg.dataset.gray;
+                    });
+
+                    if (!isActive) {
+                        img.classList.add('active');
+                        img.src = img.dataset.color;
+                    }
+
+                    document.getElementById('partnerName').textContent = partner.name;
+                    document.getElementById('partnerDescription').textContent = partner.description;
+                    document.getElementById('partnerModal').classList.remove('hidden');
+                });
+            });
+
+            document.getElementById('closeModal').addEventListener('click', function () {
+                document.getElementById('partnerModal').classList.add('hidden');
+                document.querySelectorAll('.partner-logo img').forEach(img => {
+                    img.classList.remove('active');
+                    img.src = img.dataset.gray;
+                });
+            });
+
+            document.getElementById('partnerModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                    document.querySelectorAll('.partner-logo img').forEach(img => {
+                        img.classList.remove('active');
+                        img.src = img.dataset.gray;
+                    });
+                }
+            });
+        });
+    </script>
+</section>
+
+
 
     <!-- Kontak -->
     <section id="kontak" class="py-20 bg-gradient-to-br from-gray-50 to-white">
