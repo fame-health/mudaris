@@ -1172,7 +1172,7 @@ function loadInstagramPost(element, postId) {
                     <div class="partner-logo cursor-pointer" data-partner="partner{{ $index + 1 }}">
                         <img src="{{ Storage::url($partner->logo_gray) }}"
                              alt="{{ $partner->name }}"
-                             class="w-32 h-32 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                             class="w-32 h-32 object-contain grayscale transition-all duration-300"
                              data-gray="{{ Storage::url($partner->logo_gray) }}"
                              data-color="{{ Storage::url($partner->logo_color) }}">
                     </div>
@@ -1226,11 +1226,13 @@ function loadInstagramPost(element, postId) {
         };
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Fade-in animasi delay
             const partners = document.querySelectorAll('.fade-in');
             partners.forEach((partner, index) => {
                 partner.style.animationDelay = `${index * 0.1}s`;
             });
 
+            // Event klik logo
             document.querySelectorAll('.partner-logo').forEach(logo => {
                 logo.addEventListener('click', function() {
                     const partnerId = this.dataset.partner;
@@ -1256,6 +1258,22 @@ function loadInstagramPost(element, postId) {
                 });
             });
 
+            // Event hover warna (tanpa mempengaruhi klik)
+            document.querySelectorAll('.partner-logo img').forEach(img => {
+                img.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.src = this.dataset.color;
+                    }
+                });
+
+                img.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.src = this.dataset.gray;
+                    }
+                });
+            });
+
+            // Tutup modal
             document.getElementById('closeModal').addEventListener('click', function () {
                 document.getElementById('partnerModal').classList.add('hidden');
                 document.querySelectorAll('.partner-logo img').forEach(img => {
@@ -1264,6 +1282,7 @@ function loadInstagramPost(element, postId) {
                 });
             });
 
+            // Klik luar modal untuk menutup
             document.getElementById('partnerModal').addEventListener('click', function(e) {
                 if (e.target === this) {
                     this.classList.add('hidden');
@@ -1276,6 +1295,7 @@ function loadInstagramPost(element, postId) {
         });
     </script>
 </section>
+
 
 
 
